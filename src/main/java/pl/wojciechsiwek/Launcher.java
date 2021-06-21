@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pl.wojciechsiwek.view.ViewFactory;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -17,12 +18,7 @@ public class Launcher extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent parent;
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/MainWindow.fxml")));
-
-        Scene scene = new Scene(parent);
-
-        stage.setScene(scene);
-        stage.show();
+        ViewFactory viewFactory = new ViewFactory(new EmailManager());
+        viewFactory.showLoginWindow();
     }
 }
