@@ -3,5 +3,5 @@ module MyMailClient {
     requires javafx.fxml;
 
     opens pl.wojciechsiwek;
-    opens pl.wojciechsiwek.view;
+    opens pl.wojciechsiwek.controller;
 }
