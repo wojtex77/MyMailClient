@@ -18,7 +18,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent parent;
-        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("view/testView.fxml")));
+        parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/view/LoginWindow.fxml")));
 
         Scene scene = new Scene(parent);
 

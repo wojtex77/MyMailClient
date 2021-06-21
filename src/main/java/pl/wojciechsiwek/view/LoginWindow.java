@@ -1,4 +1,4 @@
 package pl.wojciechsiwek.view;
 
-public class TestView {
+public class LoginWindow {
 }
