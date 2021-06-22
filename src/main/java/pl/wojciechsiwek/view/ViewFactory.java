@@ -20,6 +20,27 @@ public class ViewFactory {
         this.emailManager = emailManager;
     }
 
+    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private FontSize fontSize = FontSize.MEDIUM;
+
+    public ColorTheme getColorTheme() {
+        return colorTheme;
+    }
+
+    public FontSize getFontSize() {
+        return fontSize;
+    }
+
+    public void setColorTheme(ColorTheme colorTheme) {
+        this.colorTheme = colorTheme;
+    }
+
+    public void setFontSize(FontSize fontSize) {
+        this.fontSize = fontSize;
+    }
+
+
+
     private void initializeStage (BaseController controller){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(controller.getFxmlName()));
         fxmlLoader.setController(controller);
