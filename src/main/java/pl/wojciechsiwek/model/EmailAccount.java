@@ -32,7 +32,6 @@ public class EmailAccount {
     public String getPassword() {
         return password;
     }
-
     public Properties getProperties() {
         return properties;
     }
