@@ -3,6 +3,8 @@ module MyMailClient {
     requires javafx.fxml;
     requires javafx.graphics;
     requires javafx.web;
+    requires java.mail;
+    requires activation;
 
     opens pl.wojciechsiwek;
     opens pl.wojciechsiwek.controller;
