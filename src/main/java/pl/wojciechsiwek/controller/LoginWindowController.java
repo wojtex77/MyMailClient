@@ -1,6 +1,7 @@
 package pl.wojciechsiwek.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -10,7 +11,10 @@ import pl.wojciechsiwek.controller.services.LoginService;
 import pl.wojciechsiwek.model.EmailAccount;
 import pl.wojciechsiwek.view.ViewFactory;
 
-public class LoginWindowController extends BaseController{
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class LoginWindowController extends BaseController implements Initializable {
 
     @FXML
     private PasswordField passwordField;
@@ -43,7 +47,16 @@ public class LoginWindowController extends BaseController{
                         viewFactory.closeStage(stage);
                         System.out.println("loginWindowClosed");
                         return;
-
+                    case FAILED_BY_CREDENTIALS:
+                        errorLabel.setText("Invalid credentials");
+                        return;
+                    case FAILED_BY_NETWORK:
+                        errorLabel.setText("Conection error");
+                        return;
+                    case FAILED_BY_UNEXPEECTED_ERROR:
+                        errorLabel.setText("something gone wrong");
+                        return;
+                    default: return;
                 }
             });
         }
@@ -60,4 +73,9 @@ public class LoginWindowController extends BaseController{
         }
         else return true;    }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        emailAddressField.setText("wojsiwtest@gmail.com");
+        passwordField.setText("1qaz-pl,");
+    }
 }
