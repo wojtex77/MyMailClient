@@ -8,4 +8,5 @@ module MyMailClient {
 
     opens pl.wojciechsiwek;
     opens pl.wojciechsiwek.controller;
+    opens pl.wojciechsiwek.model;
 }
